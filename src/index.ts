@@ -12,7 +12,7 @@ export default function configured<T>(params:{path:string,writeMissing:boolean,d
     let postConfig = JSON.stringify(config);
 
     if(preConfig !== postConfig){
-        fs.writeFileSync(params.path,JSON.stringify(params.defaultConfig,null,2),{encoding:"utf-8"});
+        fs.writeFileSync(params.path,JSON.stringify(config,null,2),{encoding:"utf-8"});
     }
 
     return config;
