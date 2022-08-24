@@ -11,7 +11,7 @@ export default function configured<T>(params:{path:string,writeMissing?:boolean,
     config = mergeConfig(config,params.defaultConfig);
     let postConfig = JSON.stringify(config);
 
-    if(preConfig !== postConfig){
+    if(preConfig !== postConfig && params.writeMissing){
         fs.writeFileSync(params.path,JSON.stringify(config,null,2),{encoding:"utf-8"});
     }
 
