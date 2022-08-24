@@ -1,5 +1,5 @@
 import fs from 'fs';
-export default function configured<T>(params:{path:string,writeMissing:boolean,defaultConfig:T}):T{
+export default function configured<T>(params:{path:string,writeMissing?:boolean,defaultConfig:T}):T{
     if(!fs.existsSync(params.path)){
         if(params.writeMissing){
             fs.writeFileSync(params.path,JSON.stringify(params.defaultConfig,null,2),{encoding:"utf-8"});
