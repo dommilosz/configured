@@ -1,5 +1,6 @@
 /node_modules/
 .idea/
 /dist/
-/src/tests/read.json
+/src/tests/read*.json
 /package-lock.json
+/coverage/
